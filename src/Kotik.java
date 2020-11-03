@@ -4,7 +4,7 @@ public class Kotik {
 
 
     int fedUp = 10;
-    String food = "мышей";
+    String food;
 
     public void play(){
         System.out.println("Я поиграл");
