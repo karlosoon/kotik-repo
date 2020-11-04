@@ -41,17 +41,18 @@ public class Kotik {
     }
 
     public void eatMore(){
-        eat(2, "котлеты");
+        eat(1, "котлету");
     }
 
     public void liveAnotherDay() {
         int h = 6;
-        for (int i = 0; i < 24; i++) {
+        for (int i = 0; i <= 24; i++) {
             int action = (int) (Math.random() * h) + 1;
-            fedUp--;
+            fedUp -= 2;
             if (fedUp <= 0) {
-                eat(1, "мышей");
-                return;
+                System.out.println("Сытость = " + fedUp);
+                System.out.println("Я хочу есть");
+                eat(5, "мышей");
             }
             switch (action) {
                 case (1):
