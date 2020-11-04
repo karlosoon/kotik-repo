@@ -1,4 +1,3 @@
-import javax.sound.midi.Soundbank;
 
 public class Kotik {
 
@@ -32,15 +31,17 @@ public class Kotik {
 
     public void eat(){
         fedUp += 1;
+        System.out.println("Я съел 1 мышь");
     }
 
     public void eat(int fedUp, String food){
         this.fedUp += fedUp;
         this.food = food;
+        System.out.println("Я съел " + fedUp + " " + food);
     }
 
     public void eatMore(){
-        eat(10, "котлет");
+        eat(2, "котлеты");
     }
 
     public void liveAnotherDay() {
@@ -49,8 +50,7 @@ public class Kotik {
             int action = (int) (Math.random() * h) + 1;
             fedUp--;
             if (fedUp <= 0) {
-                eat(7, "мышей");
-                System.out.println("Я съел " + fedUp + " " + food);
+                eat(1, "мышей");
                 return;
             }
             switch (action) {
@@ -70,12 +70,12 @@ public class Kotik {
                 case (5):
                     scratch();
                     eatMore();
-                    System.out.println(fedUp);
                     break;
                 case (6):
                     yawn();
                     break;
             }
+            System.out.println("Сытость = " + fedUp);
         }
     }
 }
