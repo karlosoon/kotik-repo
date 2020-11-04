@@ -30,8 +30,8 @@ public class Kotik {
     }
 
     public void eat(){
-        fedUp += 1;
-        System.out.println("Я съел 1 мышь");
+        fedUp += 5;
+        System.out.println("Я съел 5 мышей");
     }
 
     public void eat(int fedUp, String food){
@@ -41,19 +41,20 @@ public class Kotik {
     }
 
     public void eatMore(){
-        eat(1, "котлету");
+        eat(3, "котлет");
     }
 
     public void liveAnotherDay() {
         int h = 6;
         for (int i = 0; i <= 24; i++) {
             int action = (int) (Math.random() * h) + 1;
-            fedUp -= 2;
+
             if (fedUp <= 0) {
-                System.out.println("Сытость = " + fedUp);
                 System.out.println("Я хочу есть");
-                eat(5, "мышей");
+                eat();
+                System.out.println("Сытость = " + fedUp);
             }
+            fedUp -= 2;
             switch (action) {
                 case (1):
                     play();
@@ -63,7 +64,7 @@ public class Kotik {
                     break;
                 case (3):
                     chaseMouse();
-                    eat();
+                    eat(1, "мышь");
                     break;
                 case (4):
                     meow();
