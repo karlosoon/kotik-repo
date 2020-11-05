@@ -41,7 +41,7 @@ public class Kotik {
     }
 
     public void eatMore(){
-        eat(3, "котлет");
+        eat(3, "котлеты");
     }
 
     public void liveAnotherDay() {
